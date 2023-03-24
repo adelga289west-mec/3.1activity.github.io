@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .divisions {
+            width: 50%;
+        }
+
+        #left {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+
+        }
+
+        .box {
+            margin: auto;
+            height: 300px;
+            width: 80%;
+            border-top: 5px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #monster {
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+
+        #double {
+            background-color: black;
+            color: white;
+        }
+
+        #box4 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #correct,
+        #incorrect {
+            width: 50%;
+        }
+
+        #one::-webkit-meter-optimum-value {
+            background: red;
+        }
+
+        #two::-webkit-meter-optimum-value {
+            background: blue;
+
+        }
+
+        #three::-webkit-meter-optimum-value {
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="divisions" id="left">
+        <h1>Question Answerws</h1>
+        <br>
+        <h3>Difference between datalist element and select element</h3>
+        <p>The difference between datalist and select is that in datalist, one is still able to type in their own value
+            while in select you can only choose from the given value.</p>
+            <br>
+
+        <h3>What are fieldsets used for?</h3>
+        <p>The fieldset label is used to group form related controls and their labels together in the same area.</p>
+        <br>
+
+        <h3>Imagine you have made the following form. What could you add to this form to separate the two groups?</h3>
+        <p>The solution to the question is in the fourth box on the right.</p>
+        <br>
+
+        <h3>Can you change input values if they are inside a disabled fieldset?</h3>
+        <p>You cannot change input values if they are inside a disabled fieldset.</p>
+        <br>
+
+        <h3>What are the 6 main attributes of the meter tag?</h3>
+        <p>The 6 main attributes of the meter tag are high, low, min, max, optimum, and value.</p>
+
+
+    </div>
+    <div class="divisions" id="right">
+        <div class="box">
+            <h1>Datalist</h1>
+            <form>
+                Choose a flavor: <input list="flavors" name="flavor">
+                <datalist id="flavors">
+                    <option value="chocolate"></option>
+                    <option value="mint"></option>
+                    <option value="coconut"></option>
+                    <option value="strawberry" s></option>
+                    <option value="vanilla"></option>
+                </datalist>
+            </form>
+        </div>
+        <div class="box">
+            <h1>Select</h1>
+            <form>
+                <label for="cars">Choose a flavor: </label>
+
+                <select name="cars" id="cars">
+                    <option value="chocolate">Chocolate</option>
+                    <option value="mint">Mint</option>
+                    <option value="coconut">Coconut</option>
+                    <option value="strawberry">Strawberry</option>
+                    <option value="vanilla">Vanilla</option>
+                </select>
+            </form>
+
+        </div>
+        <div class="box">
+            <h1>Fieldset and Legend</h1>
+            <form>
+                <fieldset>
+                    <legend id="monster">Choose your favorite monster</legend>
+                    <input type="radio" name="monster">Kraken
+                    <br>
+                    <input type="radio" name="monster">Sasquatch
+                    <br>
+                    <input type="radio" name="monster">Mothman
+                </fieldset>
+            </form>
+
+        </div>
+        <div class="box" id="box4">
+            <div id="incorrect">
+                <h3>Incorrect</h3>
+                <form>
+                    <legend id="double">Choose a favorite color</legend>
+                    <input type="radio" name="color">Blue
+                    <br>
+                    <input type="radio" name="color">Green
+                    <br>
+                    <input type="radio" name="color">Pink
+                    <br>
+                    <input type="radio" name="color">Red
+                    <br>
+                    <input type="radio" name="color">Yellow
+                    <legend id="double">Choose a favorite monster</legend>
+                    <input type="radio" name="monster">Kraken
+                    <br>
+                    <input type="radio" name="monster">Sasquatch
+                    <br>
+                    <input type="radio" name="monster">Mothman
+                </form>
+            </div>
+            <div id="correct">
+                <h3>Correct</h3>
+                <form>
+                    <fieldset>
+                        <legend id="double">Choose a favorite color</legend>
+                        <input type="radio" name="color">Blue
+                        <br>
+                        <input type="radio" name="color">Green
+                        <br>
+                        <input type="radio" name="color">Pink
+                        <br>
+                        <input type="radio" name="color">Red
+                        <br>
+                        <input type="radio" name="color">Yellow
+                    </fieldset>
+                    <fieldset>
+                        <legend id="double">Choose a favorite monster</legend>
+                        <input type="radio" name="monster">Kraken
+                        <br>
+                        <input type="radio" name="monster">Sasquatch
+                        <br>
+                        <input type="radio" name="monster">Mothman
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+        <div class="box">
+            <h1>Meter Activity</h1>
+            <label for="one">Temperature: Too hot</label>
+<!--             <input type="text"  id="numimput"max="120">
+ -->            <meter id="one"   value="90"min="0" max="120"> </meter>
+
+            <label for="two">Temperature: Too cold</label>
+            <meter id="two" value="50" min="0" max="120"> </meter>
+
+
+            <label for="three">Temperature: Perfect</label>
+            <meter id="three" value="75" min="0" max="120"> </meter>
+
+
+
+        </div>
+        <div class="box">
+            <h1>Output Adding</h1>
+            <form id="numadd" oninput="x.value=parseInt(first.value)+parseInt(second.value)">
+                <input type="range" id="first" name="first">+<input type="input" id="second" value="25" name="second">
+
+            </form>
+            <output form="numadd" id="x" name="x" for="first+second"></output>
+
+        </div>
+        <div class="box">
+            <h1>Output Multiply</h1>
+            <form id="nummult" oninput="y.value=parseInt(third.value)*parseInt(fourth.value)">
+                <input type="input"  id="third" name="third">*<input type="input" id="fourth"  name="fourth">
+
+            </form>
+            <output form="nummult" id="y" name="y" for="third*fourth"></output>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
